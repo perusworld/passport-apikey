@@ -1,13 +1,13 @@
 import { APIKeyStrategyProvider, APIKeyStrategyConfig } from "../src/index";
 
-describe('check instance', () => {
+describe("check instance", () => {
 
-    it('should say return name', () => {
+    it("should say return name", () => {
         let impl = APIKeyStrategyProvider.getInstance();
-        expect(impl.name).toEqual('apikey');
+        expect(impl.name).toEqual("apikey");
     });
 
-    it('should return with defaults', () => {
+    it("should return with defaults", () => {
         let cfg = new APIKeyStrategyConfig();
         expect(cfg.enabled).toEqual(false);
     });

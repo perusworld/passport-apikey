@@ -7,13 +7,13 @@ export enum APIKeySource {
 }
 
 export class APIKeyStrategyConfig {
-  enabled = "true" === process.env.API_KEY_ENABLED || false
-  keySource = process.env.API_KEY_SOURCE || APIKeySource.HEADER
-  keyName = process.env.API_KEY_NAME || 'defauktApiKeyName'
-  keyValue = process.env.API_KEY_VALUE || 'defaultApiKeyValue'
+  enabled = "true" === process.env.API_KEY_ENABLED || false;
+  keySource = process.env.API_KEY_SOURCE || APIKeySource.HEADER;
+  keyName = process.env.API_KEY_NAME || "defauktApiKeyName";
+  keyValue = process.env.API_KEY_VALUE || "defaultApiKeyValue";
 }
 
-export class APIKeyStrategy { //implements passport.Strategy
+export class APIKeyStrategy { // implements passport.Strategy
 
   protected cfg: APIKeyStrategyConfig;
 
@@ -21,7 +21,7 @@ export class APIKeyStrategy { //implements passport.Strategy
     this.cfg = cfg;
   }
   public authenticate(callback: passport.StrategyCreatedStatic, req: Request, options?: any): any {
-    throw new Error('Override and implement');
+    throw new Error("Override and implement");
   }
 }
 
@@ -36,10 +36,10 @@ export class SimpleAPIKeyStrategy extends APIKeyStrategy {
     let keyName = this.cfg.keyName;
     switch (this.cfg.keySource) {
       case APIKeySource.REQUEST:
-        value = req.body[keyName] || req.query[keyName]
+        value = req.body[keyName] || req.query[keyName];
         break;
       default:
-        value = req.header(keyName)
+        value = req.header(keyName);
         break;
     }
     if (!this.cfg.enabled || value && this.cfg.keyValue === value) {
@@ -58,11 +58,11 @@ export class APIKeyStrategyProvider {
   public static getInstance<T>(cfg: APIKeyStrategyConfig = new APIKeyStrategyConfig(), stgDef: typeof APIKeyStrategy = SimpleAPIKeyStrategy): passport.Strategy {
     let stg = new stgDef(cfg);
     let ret = {
-      name: 'apikey',
+      name: "apikey",
       authenticate(this: passport.StrategyCreated<passport.Strategy>, req: Request, options?: any): any {
         stg.authenticate(this, req, options);
       }
-    }
+    };
     return ret;
   }
 }

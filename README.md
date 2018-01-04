@@ -1,5 +1,9 @@
 # Passport-APIKey Typescript Module #
 
+[![bitHound Overall Score](https://www.bithound.io/github/perusworld/passport-apikey/badges/score.svg)](https://www.bithound.io/github/perusworld/passport-apikey)
+[![bitHound Dependencies](https://www.bithound.io/github/perusworld/passport-apikey/badges/dependencies.svg)](https://www.bithound.io/github/perusworld/passport-apikey/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/perusworld/passport-apikey/badges/code.svg)](https://www.bithound.io/github/perusworld/passport-apikey)
+
 Integrate API Key based authentication in your nodejs application using this [Passport](http://passportjs.org/) strategy.
 
 ## Install ##
