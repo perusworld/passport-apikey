@@ -1,0 +1,56 @@
+{
+  "name": "passport-apikey",
+  "version": "1.0.0",
+  "description": "Passport API Key Authentication - Node.js TypeScript Module",
+  "main": "dist/index",
+  "types": "dist/index",
+  "scripts": {
+    "test": "jest",
+    "build": "node ./node_modules/typescript/bin/tsc"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
+    "transform": {
+      "^.+\\.(ts|tsx|js|html)$": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/perusworld/passport-apikey.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "module",
+    "passport",
+    "apikey",
+    "authentication"
+  ],
+  "author": "Saravana Perumal Shanmugam <saravanaperumal@msn.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perusworld/passport-apikey/issues"
+  },
+  "homepage": "https://github.com/perusworld/passport-apikey",
+  "devDependencies": {
+    "@types/jest": "^20.0.8",
+    "@types/node": "^8.5.5",
+    "jest": "^20.0.4",
+    "ts-jest": "^20.0.14",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "@types/passport": "^0.4.2",
+    "passport": "^0.4.0"
+  }
+}
